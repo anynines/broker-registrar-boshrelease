@@ -1,10 +1,11 @@
+---
 builds:
   2e93bad3-f076-4bd7-7aa0-0844fb0a183b:
     version: 3.1.0
   4b10e9d6-6a8b-4ff0-4753-21e1ef9c1792:
     version: 3.2.1
   6be88655-4f58-4580-8c2b-d5480e7fa79f:
-    version: "1"
+    version: '1'
   b215b617-d259-480e-68e8-4d2ff8ed9d89:
     version: 3.1.1
   be5d9042-a46e-45d8-5d68-3aaf1ae06e21:
@@ -19,4 +20,6 @@ builds:
     version: 3.2.0
   f9ab3bf5-f0b1-4583-ae2f-aedf66d66452:
     version: 2.0.0
-format-version: "2"
+  91263bcc-5b7b-4db7-a745-090dd6936003:
+    version: 3.2.2.1
+format-version: '2'
