@@ -14,6 +14,14 @@ CF_SKIP_SSL_VALIDATION='<%= p("cf.skip_ssl_validation") %>'
 
 <%
   broker_url = p("servicebroker.url", nil)
+  unless broker_url
+    if_p("servicebroker.host") do |host|
+      scheme =  p("servicebroker.scheme")
+      port =  p("servicebroker.port")
+      broker_url = "#{scheme}://$(dig #{host} +short):#{port}"
+    end
+  end
+
   broker_name = p("servicebroker.name", nil)
   broker_username = p("servicebroker.username", nil)
   broker_password = p("servicebroker.password", nil)
@@ -27,10 +35,10 @@ CF_SKIP_SSL_VALIDATION='<%= p("cf.skip_ssl_validation") %>'
     broker_password = broker.p("password")
   end
 %>
-BROKER_NAME='<%= broker_name %>'
-BROKER_URL='<%= broker_url %>'
-BROKER_USERNAME='<%= broker_username %>'
-BROKER_PASSWORD='<%= broker_password %>'
+BROKER_NAME="<%= broker_name %>"
+BROKER_URL="<%= broker_url %>"
+BROKER_USERNAME="<%= broker_username %>"
+BROKER_PASSWORD="<%= broker_password %>"
 
 function createOrUpdateServiceBroker() {
   if [[ "$(cf curl /v2/service_brokers\?q=name:${BROKER_NAME} | jq -r .total_results)" == "0" ]]; then

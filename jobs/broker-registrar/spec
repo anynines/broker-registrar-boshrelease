@@ -16,6 +16,14 @@ properties:
   servicebroker.url:
     description: 'URL of broker to register'
     example: https://my-broker.system.domain
+  servicebroker.host:
+    description: 'Host of broker to register'
+  servicebroker.port:
+    description: 'Port of broker to register'
+    default : 3000
+  servicebroker.scheme:
+    description: 'Scheme for the broker'
+    default: "http"
   servicebroker.name:
     description: 'Name of broker when registering/deregistering'
   servicebroker.username:
