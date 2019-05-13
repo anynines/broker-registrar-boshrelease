@@ -1,4 +1,4 @@
-# Registering Service Brokers with Cloud Foundry
+# Registering Service Brokers With Cloud Foundry
 
 The `broker-registrar-boshrelease` is a BOSH release aimed at providing a generic errands
 for registering service brokers with Cloud Foundry via `broker-registrar` and `broker-deregistrar`
